@@ -1,0 +1,304 @@
+# Ketarin - English localization file
+# Format: KEY=VALUE
+# Lines starting with # are comments
+
+# Common buttons
+OK="OK"
+Cancel="Cancel"
+Close="Close"
+Yes="Yes"
+No="No"
+Browse="Browse..."
+Add="Add"
+Remove="Remove"
+Edit="Edit"
+Delete="Delete"
+Save="Save"
+Load="Load"
+Find="Find"
+Search="Search"
+Copy="Copy"
+Paste="Paste"
+Cut="Cut"
+SelectAll="Select All"
+Clear="Clear"
+
+# Main menu
+File="File"
+New="New"
+Import="Import"
+Export="Export"
+Settings="Settings"
+Exit="Exit"
+View="View"
+Log="Log"
+Help="Help"
+About="About"
+
+# Main form
+MainFormTitle="Ketarin"
+Update="Update"
+CheckForUpdate="Check for update"
+ForceDownload="Force download"
+Install="Install"
+UpdateAndInstall="Update and install"
+OpenFile="Open file"
+OpenFolder="Open folder"
+Properties="Properties"
+Rename="Rename"
+Commands="Commands"
+RunPostDownload="Run post-download"
+
+# List columns
+ApplicationName="Application name"
+LastUpdate="Last update"
+Progress="Progress"
+Target="Target"
+Category="Category"
+Status="Status"
+
+# Installation dialog
+InstallingApplications="Installing Applications"
+InstallingApplication="Installing application"
+ShowDetails="Show details"
+HideDetails="Hide details"
+Time="Time"
+Message="Message"
+Events="Events"
+
+# Error messages
+ProcessExitedWithErrorCode="Process exited with error code {0}"
+SetupFailed="Setup failed"
+PermissionError="Permission error - Run as administrator"
+InstallationBlocked="Installation blocked by system policy"
+ContactAdministrator="Contact administrator regarding Group Policies"
+MSIInstallationCancelled="MSI installation cancelled by user"
+AnotherInstallationInProgress="Another installation is already in progress"
+SystemRebootRequired="System reboot required"
+
+# Settings Dialog
+SettingsTitle="Settings"
+General="General"
+Connection="Connection"
+Commands="Commands"
+Hotkeys="Hotkeys"
+GlobalVariables="Global variables"
+UpdateAtStartup="Update automatically at startup"
+AvoidBeta="Avoid beta versions on FileHippo"
+AvoidNonBinary="Avoid downloading non-binary files (potentially error pages)"
+UpdateOnlineDatabase="Check for updates in the online database"
+MinimizeToTray="Minimize to tray"
+AutoBackups="Automatically create database backups"
+OpenWebsiteOnDoubleClick="Open website when double-clicking an application (if specified)"
+CustomColumns="Custom columns"
+ConnectionTimeout="Connection timeout:"
+Seconds="seconds"
+ParallelDownloads="Number of parallel downloads:"
+RetriesPerDownload="Number of retries per download:"
+SegmentsPerDownload="Number of segments per download:"
+DefaultUserAgent="Default user agent:"
+ProxySettings="HTTP proxy settings"
+Server="Server:"
+UserName="User name:"
+Password="Password:"
+GlobalVariablesDescription="Global variables can be used in all applications by using the syntax {variablename}. If you want to use a variable in a regular expression, use {{variablename}} instead."
+CommandEvent="Command event:"
+Actions="Actions:"
+Hotkey="Hotkey:"
+DoubleClick="Double-click to assign"
+Import="Import..."
+Export="Export..."
+Name="Name"
+Value="Value"
+Add="Add..."
+Edit="Edit"
+Remove="Remove"
+
+# MainForm localization
+FileMenu="&File"
+NewApplication="&New application..."
+Import="&Import..."
+ExportSelected="E&xport selected..."
+ExportAll="Export &all..."
+Exit="&Exit"
+
+ViewMenu="&View"
+ShowLog="&Show log"
+ShowGroups="Show gr&oups"
+ShowStatusBar="Show status &bar"
+AutoScroll="&Auto scroll"
+Find="&Find"
+
+HelpMenu="&Help"
+Tutorial="&Tutorial"
+About="&About"
+
+# Context menu
+Update="&Update"
+CheckForUpdate="C&heck for update"
+ForceDownload="&Force download"
+Install="&Install"
+UpdateAndInstall="Upda&te and install"
+Commands="Com&mands"
+RunPostDownloadCommand="&Run post-download command"
+OpenFile="&Open file"
+OpenFolder="Ope&n folder"
+FileProperties="File propertie&s"
+RenameFile="&Rename file"
+Edit="&Edit"
+Delete="&Delete"
+Copy="&Copy"
+Paste="&Paste"
+SelectAll="Select &all"
+InvertSelection="In&vert selection"
+
+# Buttons
+UpdateAll="&Update all"
+AddApplication="&Add application"
+
+# Run button context menu
+CheckAndDownload="Check and download"
+OnlyCheck="Only check"
+
+# Add button context menu
+ImportFromFile="Import from file..."
+ImportFromOnline="Import from online database..."
+
+# Tray icon
+Show="Show"
+
+# Column headers
+Name="Name"
+LastUpdate="Last update"
+Progress="Progress"
+Target="Target"
+Category="Category"
+Status="Status"
+
+# Status values
+StatusDownloading="Downloading"
+StatusFailed="Failed"
+StatusIdle="Idle"
+StatusNoUpdate="No update"
+StatusUpdated="Updated"
+StatusUpdateAvailable="Update available"
+
+# Status bar
+NumberOfApplications="Number of applications: "
+SelectedApplications="Selected applications: "
+StatusBarFormat="By status: {0} Idle, {1} Updates, {2} Finished, {3} Failed ({4} Disabled)"
+
+# MainForm localization
+MainFormTitle="Ketarin"
+FileMenu="&File"
+NewApplication="&New application..."
+Import="&Import..."
+ExportSelected="E&xport selected..."
+ExportAll="Export &all..."
+Settings="&Settings"
+Exit="&Exit"
+ViewMenu="&View"
+ShowLog="&Show log"
+ShowGroups="Show gr&oups"
+ShowStatusBar="Show status &bar"
+AutoScroll="&Auto scroll"
+Find="&Find"
+HelpMenu="&Help"
+Tutorial="&Tutorial"
+About="&About"
+Update="&Update"
+CheckForUpdate="C&heck for update"
+ForceDownload="&Force download"
+Install="&Install"
+UpdateAndInstall="Upda&te and install"
+Commands="Com&mands"
+RunPostDownloadCommand="&Run post-download command"
+OpenFile="&Open file"
+OpenFolder="Ope&n folder"
+FileProperties="File propertie&s"
+RenameFile="&Rename file"
+Edit="&Edit"
+Delete="&Delete"
+Copy="&Copy"
+Paste="&Paste"
+SelectAll="Select &all"
+InvertSelection="In&vert selection"
+UpdateAll="&Update all"
+AddApplication="&Add application"
+CheckAndDownload="Check and download"
+OnlyCheck="Only check"
+ImportFromFile="Import from file..."
+ImportFromOnline="Import from online database..."
+Show="Show"
+Name="Name"
+LastUpdate="Last update"
+Progress="Progress"
+Target="Target"
+Category="Category"
+Status="Status"
+
+# Tray icon
+TrayIconIdle="Ketarin (Idle)"
+
+# Status bar
+StatusSummary="By status: {0} Idle, {1} Finished, {2} Failed"
+
+# ApplicationJobDialog
+NewApplication=New Application
+ApplicationName=Application name:
+BetaVersions=Beta versions:
+SpoofReferer=Sp&oof HTTP referer:
+UserAgent=User age&nt:
+UseVariableForChanges=&Use the following variable as indicator for changes:
+CompareWithHash=Compare with &hash value:
+Variable=&Variable:
+CommandBefore=Execute the following command &before downloading:
+CommandAfter=Execute the following command &after downloading:
+Website=&Website:
+Notes=N&otes:
+NumberOfRevisions=Total &number of files to keep (original + backups):
+SetupInstructions=I&nstructions to follow for setup:
+Enabled=&Enabled
+DeletePrevious=Always delete previously downloaded file
+ShareOnline=Sh&are this application online with others
+DownloadExclusively=Do not download this application &simultaneously with other applications
+CheckForUpdatesOnly=Do not download, &check for updates only
+IgnoreFileInformation=Ignore file infor&mation (do not re-download if file is missing)
+Avoid=Avoid
+Default=(Default)
+Download=Download
+URL=URL:
+FileHippoID=FileHippo ID:
+SaveInFolder=Save in folder
+SaveToFile=Save to file
+DownloadSource=Download source
+DownloadLocation=Download location
+Downloading=&Downloading
+UpdateDetection=Update detection
+Miscellaneous=Miscellaneous
+Application=Application
+AdvancedSettings=Advanced settings
+Commands=Commands
+Information=Information
+Setup=Setup
+StartProcess=&Start process...
+CloseProcess=Cl&ose process...
+CopyFile=&Copy file...
+CustomCommand=C&ustom command...
+SaveAsDefault=Save as &default
+Variables=Variables
+AddInstruction=Add instruction
+
+# InstallingApplicationsDialog
+HideDetails=Hide details
+SkippedNoInstructions=Skipped since no setup instructions exist
+UpdatingApplication=Updating application {0} of {1}: {2}
+UpdateFailedInstallingPrevious=Update failed, installing previously available version
+UpdateFailedNoFile=Update failed, no file available to install
+NoFileAvailable=No file available for installation
+InstallingApplicationProgress=Installing application {0} of {1}: {2}
+InstalledSuccessfully=Installed successfully
+ApplicationsInstalledSuccessfully={0} of {1} applications installed successfully.
+InstallingApplications=Installing Applications
+ErrorTipAccessDenied=Tip: Try running Ketarin as administrator or check if the file is being used by another application.
+ErrorTipNetwork=Tip: Check your internet connection and try again.

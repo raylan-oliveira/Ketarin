@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using CDBurnerXP;
 using CDBurnerXP.Forms;
+using Ketarin.Localization;
 
 namespace Ketarin.Forms
 {
@@ -75,7 +76,10 @@ namespace Ketarin.Forms
         protected override void OnLoad(EventArgs e)
         {
             if (DesignMode) return;
-
+            
+            // Aplicar textos localizados
+            ApplyLocalization();
+            
             bool expandedByDefault = Conversion.ToBoolean(Settings.GetValue(this, "Expanded", false));
             // Collapse dialog initially
             this.expanded = expandedByDefault;
@@ -147,12 +151,21 @@ namespace Ketarin.Forms
             }
         }
 
+        private void SetExpansionButton()
+        {
+            pnlExpanded.Visible = this.expanded;
+            string hideDetails = LocalizationManager.GetString("HideDetails", "Hide details");
+            string showDetails = LocalizationManager.GetString("ShowDetails", "Show details");
+            lbShowHideDetails.Text = (this.expanded ? "        " + "&" + hideDetails : "        " + "&" + showDetails);
+        }
+
         private void UpdateAndInstallApp(DoWorkEventArgs e, ApplicationJob job, ref int count)
         {
             // Check: Are actually some instructions defined?
             if (job.SetupInstructions.Count == 0)
             {
-                LogInfo(job.Name + ": Skipped since no setup instructions exist", LogItemType.Warning);
+                string skippedMessage = LocalizationManager.GetString("SkippedNoInstructions", "Skipped since no setup instructions exist");
+                LogInfo(job.Name + ": " + skippedMessage, LogItemType.Warning);
                 return;
             }
 
@@ -161,7 +174,8 @@ namespace Ketarin.Forms
             // Force update if no file exists
             if (this.UpdateApplications || !job.FileExists)
             {
-                UpdateStatus(string.Format("Updating application {0} of {1}: {2}", count, this.Applications.Length, job.Name));
+                string updatingMessage = LocalizationManager.GetString("UpdatingApplication", "Updating application {0} of {1}: {2}");
+                UpdateStatus(string.Format(updatingMessage, count, this.Applications.Length, job.Name));
 
                 Updater updater = new Updater {IgnoreCheckForUpdatesOnly = true};
                 updater.BeginUpdate(new[] { job }, false, false);
@@ -189,48 +203,62 @@ namespace Ketarin.Forms
                 {
                     if (job.FileExists)
                     {
-                        LogInfo(job.Name + ": Update failed, installing previously available version", LogItemType.Warning);
+                        string updateFailedMessage = LocalizationManager.GetString("UpdateFailedInstallingPrevious", "Update failed, installing previously available version");
+                        LogInfo(job.Name + ": " + updateFailedMessage, LogItemType.Warning);
                     }
                     else
                     {
-                        LogInfo(job.Name + ": Update failed", LogItemType.Error);
+                        string updateFailedNoFileMessage = LocalizationManager.GetString("UpdateFailedNoFile", "Update failed, no file available to install");
+                        LogInfo(job.Name + ": " + updateFailedNoFileMessage, LogItemType.Error);
                         return;
                     }
                 }
             }
 
-            UpdateStatus(string.Format("Installing application {0} of {1}: {2}", count, this.Applications.Length, job.Name));
-
-            job.Install(bgwSetup);
-
-            LogInfo(job.Name + ": Installed successfully", LogItemType.Info);
-
-            this.installCounter++;
-            count++;
-        }
-
-        private void updater_ProgressChanged(object sender, Updater.JobProgressChangedEventArgs e)
-        {
-            if (InvokeRequired)
+            // Verificar novamente se o arquivo existe após o update
+            if (!job.FileExists)
             {
-                this.Invoke((MethodInvoker)delegate()
-                {
-                    updater_ProgressChanged(sender, e);
-                });
+                string noFileMessage = LocalizationManager.GetString("NoFileAvailable", "No file available for installation");
+                LogInfo(job.Name + ": " + noFileMessage, LogItemType.Error);
                 return;
             }
 
-            progressBar.Style = ProgressBarStyle.Blocks;
-            progressBar.Value = e.ProgressPercentage;
+            string installingMessage = LocalizationManager.GetString("InstallingApplicationProgress", "Installing application {0} of {1}: {2}");
+            UpdateStatus(string.Format(installingMessage, count, this.Applications.Length, job.Name));
+
+            try
+            {
+                job.Install(bgwSetup);
+                string installedSuccessMessage = LocalizationManager.GetString("InstalledSuccessfully", "Installed successfully");
+                LogInfo(job.Name + ": " + installedSuccessMessage, LogItemType.Info);
+                this.installCounter++;
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = ex.Message;
+                string tip = GetErrorTip(ex.Message);
+                
+                if (!string.IsNullOrEmpty(tip))
+                {
+                    errorMessage += "\n\n" + tip;
+                }
+                
+                string setupFailedMessage = LocalizationManager.GetString("SetupFailed", "Setup failed");
+                LogInfo(job.Name + ": " + setupFailedMessage + " - " + errorMessage, LogItemType.Error);
+                return;
+            }
+
+            count++;
         }
 
         private void bgwSetup_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            UpdateStatus(string.Format("{0} of {1} applications installed successfully.", this.installCounter, this.Applications.Length));
+            string completionMessage = LocalizationManager.GetString("ApplicationsInstalledSuccessfully", "{0} of {1} applications installed successfully.");
+            UpdateStatus(string.Format(completionMessage, this.installCounter, this.Applications.Length));
             progressBar.Style = ProgressBarStyle.Blocks;
             progressBar.Value = 100;
             bCancel.Enabled = true;
-            bCancel.Text = "Close";
+            bCancel.Text = LocalizationManager.GetString("Close", "Close");
 
             if (this.AutoClose)
             {
@@ -280,13 +308,36 @@ namespace Ketarin.Forms
                 this.Height -= pnlExpanded.Height;
         }
 
-        private void SetExpansionButton()
+        #endregion
+
+        private void ApplyLocalization()
         {
-            pnlExpanded.Visible = this.expanded;
-            lbShowHideDetails.Text = (this.expanded ? "        " + "&Hide details" : "        " + "&Show details");
+            // Título do formulário
+            this.Text = LocalizationManager.GetString("InstallingApplications", "Installing Applications");
+            
+            // Botão
+            bCancel.Text = LocalizationManager.GetString("Cancel", "Cancel");
         }
 
-        #endregion 
+        private string GetErrorTip(string errorMessage)
+        {
+            if (errorMessage.Contains("blocked") || errorMessage.Contains("access denied"))
+            {
+                return LocalizationManager.GetString("ErrorTipAccessDenied", "Tip: Try running Ketarin as administrator or check if the file is being used by another application.");
+            }
+            
+            if (errorMessage.Contains("network") || errorMessage.Contains("timeout"))
+            {
+                return LocalizationManager.GetString("ErrorTipNetwork", "Tip: Check your internet connection and try again.");
+            }
+            
+            return string.Empty;
+        }
 
+        private void updater_ProgressChanged(object sender, EventArgs e)
+        {
+            // Este método é chamado quando o progresso do updater muda
+            // Atualmente não há implementação específica necessária
+        }
     }
 }

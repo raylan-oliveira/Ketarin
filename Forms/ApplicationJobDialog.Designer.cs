@@ -127,7 +127,7 @@ namespace Ketarin.Forms
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(75, 23);
             this.bCancel.TabIndex = 100;
-            this.bCancel.Text = "Cancel";
+            this.bCancel.Text = "";
             this.bCancel.UseVisualStyleBackColor = true;
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
@@ -139,7 +139,7 @@ namespace Ketarin.Forms
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(75, 23);
             this.bOK.TabIndex = 99;
-            this.bOK.Text = "OK";
+            this.bOK.Text = "";
             this.bOK.UseVisualStyleBackColor = true;
             this.bOK.Click += new System.EventHandler(this.bOK_Click);
             // 
@@ -150,7 +150,7 @@ namespace Ketarin.Forms
             this.lblApplicationName.Name = "lblApplicationName";
             this.lblApplicationName.Size = new System.Drawing.Size(91, 13);
             this.lblApplicationName.TabIndex = 0;
-            this.lblApplicationName.Text = "&Application name:";
+            this.lblApplicationName.Text = "";
             // 
             // txtApplicationName
             // 
@@ -196,7 +196,7 @@ namespace Ketarin.Forms
             this.rbBetaAvoid.Name = "rbBetaAvoid";
             this.rbBetaAvoid.Size = new System.Drawing.Size(52, 17);
             this.rbBetaAvoid.TabIndex = 27;
-            this.rbBetaAvoid.Text = "A&void";
+            this.rbBetaAvoid.Text = "";
             this.rbBetaAvoid.UseVisualStyleBackColor = true;
             // 
             // rbAlwaysDownload
@@ -206,7 +206,7 @@ namespace Ketarin.Forms
             this.rbAlwaysDownload.Name = "rbAlwaysDownload";
             this.rbAlwaysDownload.Size = new System.Drawing.Size(73, 17);
             this.rbAlwaysDownload.TabIndex = 28;
-            this.rbAlwaysDownload.Text = "Do&wnload";
+            this.rbAlwaysDownload.Text = "";
             this.rbAlwaysDownload.UseVisualStyleBackColor = true;
             // 
             // lblBetaVersions
@@ -216,7 +216,7 @@ namespace Ketarin.Forms
             this.lblBetaVersions.Name = "lblBetaVersions";
             this.lblBetaVersions.Size = new System.Drawing.Size(74, 13);
             this.lblBetaVersions.TabIndex = 25;
-            this.lblBetaVersions.Text = "&Beta versions:";
+            this.lblBetaVersions.Text = "";
             // 
             // rbBetaDefault
             // 
@@ -227,7 +227,7 @@ namespace Ketarin.Forms
             this.rbBetaDefault.Size = new System.Drawing.Size(65, 17);
             this.rbBetaDefault.TabIndex = 26;
             this.rbBetaDefault.TabStop = true;
-            this.rbBetaDefault.Text = "(&Default)";
+            this.rbBetaDefault.Text = "";
             this.rbBetaDefault.UseVisualStyleBackColor = true;
             // 
             // bVariables
@@ -237,7 +237,7 @@ namespace Ketarin.Forms
             this.bVariables.Name = "bVariables";
             this.bVariables.Size = new System.Drawing.Size(75, 23);
             this.bVariables.TabIndex = 13;
-            this.bVariables.Text = "&Variables";
+            this.bVariables.Text = "";
             this.bVariables.UseVisualStyleBackColor = true;
             this.bVariables.Click += new System.EventHandler(this.bVariables_Click);
             // 
@@ -259,7 +259,7 @@ namespace Ketarin.Forms
             this.rbFileHippo.Name = "rbFileHippo";
             this.rbFileHippo.Size = new System.Drawing.Size(86, 17);
             this.rbFileHippo.TabIndex = 14;
-            this.rbFileHippo.Text = "File&Hippo ID:";
+            this.rbFileHippo.Text = "";
             this.rbFileHippo.UseVisualStyleBackColor = true;
             this.rbFileHippo.CheckedChanged += new System.EventHandler(this.rbFileHippo_CheckedChanged);
             // 
@@ -282,7 +282,7 @@ namespace Ketarin.Forms
             this.rbFixedUrl.Size = new System.Drawing.Size(50, 17);
             this.rbFixedUrl.TabIndex = 11;
             this.rbFixedUrl.TabStop = true;
-            this.rbFixedUrl.Text = "&URL:";
+            this.rbFixedUrl.Text = "";
             this.rbFixedUrl.UseVisualStyleBackColor = true;
             this.rbFixedUrl.CheckedChanged += new System.EventHandler(this.rbFixedUrl_CheckedChanged);
             // 
@@ -328,7 +328,7 @@ namespace Ketarin.Forms
             this.rbFolder.Name = "rbFolder";
             this.rbFolder.Size = new System.Drawing.Size(90, 17);
             this.rbFolder.TabIndex = 22;
-            this.rbFolder.Text = "Save in f&older";
+            this.rbFolder.Text = "";
             this.rbFolder.UseVisualStyleBackColor = true;
             this.rbFolder.CheckedChanged += new System.EventHandler(this.rbDirectory_CheckedChanged);
             // 
@@ -341,7 +341,7 @@ namespace Ketarin.Forms
             this.rbFileName.Size = new System.Drawing.Size(78, 17);
             this.rbFileName.TabIndex = 21;
             this.rbFileName.TabStop = true;
-            this.rbFileName.Text = "&Save to file";
+            this.rbFileName.Text = "";
             this.rbFileName.UseVisualStyleBackColor = true;
             this.rbFileName.CheckedChanged += new System.EventHandler(this.rbFileName_CheckedChanged);
             // 
@@ -354,7 +354,7 @@ namespace Ketarin.Forms
             this.chkDeletePrevious.Name = "chkDeletePrevious";
             this.chkDeletePrevious.Size = new System.Drawing.Size(218, 17);
             this.chkDeletePrevious.TabIndex = 17;
-            this.chkDeletePrevious.Text = "Always &delete previously downloaded file";
+            this.chkDeletePrevious.Text = "";
             this.chkDeletePrevious.UseVisualStyleBackColor = true;
             // 
             // lblCategory
@@ -364,7 +364,7 @@ namespace Ketarin.Forms
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(52, 13);
             this.lblCategory.TabIndex = 2;
-            this.lblCategory.Text = "&Category:";
+            this.lblCategory.Text = "";
             // 
             // cboCategory
             // 
@@ -386,7 +386,7 @@ namespace Ketarin.Forms
             this.sepTarget.Name = "sepTarget";
             this.sepTarget.Size = new System.Drawing.Size(366, 23);
             this.sepTarget.TabIndex = 7;
-            this.sepTarget.Text = "Download location";
+            this.sepTarget.Text = "";
             // 
             // sepDownload
             // 
@@ -396,7 +396,7 @@ namespace Ketarin.Forms
             this.sepDownload.Name = "sepDownload";
             this.sepDownload.Size = new System.Drawing.Size(366, 23);
             this.sepDownload.TabIndex = 5;
-            this.sepDownload.Text = "Download source";
+            this.sepDownload.Text = "";
             // 
             // chkShareOnline
             // 
@@ -405,7 +405,7 @@ namespace Ketarin.Forms
             this.chkShareOnline.Name = "chkShareOnline";
             this.chkShareOnline.Size = new System.Drawing.Size(212, 17);
             this.chkShareOnline.TabIndex = 16;
-            this.chkShareOnline.Text = "Sh&are this application online with others";
+            this.chkShareOnline.Text = "";
             this.chkShareOnline.UseVisualStyleBackColor = true;
             // 
             // lblSpoofReferer
@@ -415,7 +415,7 @@ namespace Ketarin.Forms
             this.lblSpoofReferer.Name = "lblSpoofReferer";
             this.lblSpoofReferer.Size = new System.Drawing.Size(103, 13);
             this.lblSpoofReferer.TabIndex = 3;
-            this.lblSpoofReferer.Text = "Sp&oof HTTP referer:";
+            this.lblSpoofReferer.Text = "";
             // 
             // txtSpoofReferer
             // 
@@ -460,7 +460,7 @@ namespace Ketarin.Forms
             this.tpApplication.Padding = new System.Windows.Forms.Padding(3);
             this.tpApplication.Size = new System.Drawing.Size(375, 303);
             this.tpApplication.TabIndex = 0;
-            this.tpApplication.Text = "Application";
+            this.tpApplication.Text = "";
             this.tpApplication.UseVisualStyleBackColor = true;
             // 
             // numNumberOfRevisions
@@ -487,7 +487,7 @@ namespace Ketarin.Forms
             this.lblNumberOfRevisions.Name = "lblNumberOfRevisions";
             this.lblNumberOfRevisions.Size = new System.Drawing.Size(239, 13);
             this.lblNumberOfRevisions.TabIndex = 9;
-            this.lblNumberOfRevisions.Text = "Total &number of files to keep (original + backups):";
+            this.lblNumberOfRevisions.Text = "";
             // 
             // chkEnabled
             // 
@@ -498,7 +498,7 @@ namespace Ketarin.Forms
             this.chkEnabled.Name = "chkEnabled";
             this.chkEnabled.Size = new System.Drawing.Size(65, 17);
             this.chkEnabled.TabIndex = 4;
-            this.chkEnabled.Text = "&Enabled";
+            this.chkEnabled.Text = "";
             this.chkEnabled.UseVisualStyleBackColor = true;
             // 
             // tpSettings
@@ -526,7 +526,7 @@ namespace Ketarin.Forms
             this.tpSettings.Padding = new System.Windows.Forms.Padding(3);
             this.tpSettings.Size = new System.Drawing.Size(375, 303);
             this.tpSettings.TabIndex = 1;
-            this.tpSettings.Text = "Advanced settings";
+            this.tpSettings.Text = "";
             this.tpSettings.UseVisualStyleBackColor = true;
             // 
             // lblHashVariable
@@ -536,7 +536,7 @@ namespace Ketarin.Forms
             this.lblHashVariable.Name = "lblHashVariable";
             this.lblHashVariable.Size = new System.Drawing.Size(48, 13);
             this.lblHashVariable.TabIndex = 13;
-            this.lblHashVariable.Text = "&Variable:";
+            this.lblHashVariable.Text = "";
             // 
             // cboHashType
             // 
@@ -570,7 +570,7 @@ namespace Ketarin.Forms
             this.lblCompareWithHash.Name = "lblCompareWithHash";
             this.lblCompareWithHash.Size = new System.Drawing.Size(129, 13);
             this.lblCompareWithHash.TabIndex = 11;
-            this.lblCompareWithHash.Text = "Compare with &hash value:";
+            this.lblCompareWithHash.Text = "";
             // 
             // txtUserAgent
             // 
@@ -588,7 +588,7 @@ namespace Ketarin.Forms
             this.lblUserAgent.Name = "lblUserAgent";
             this.lblUserAgent.Size = new System.Drawing.Size(62, 13);
             this.lblUserAgent.TabIndex = 5;
-            this.lblUserAgent.Text = "User age&nt:";
+            this.lblUserAgent.Text = "";
             // 
             // sepMiscellaneous
             // 
@@ -598,7 +598,7 @@ namespace Ketarin.Forms
             this.sepMiscellaneous.Name = "sepMiscellaneous";
             this.sepMiscellaneous.Size = new System.Drawing.Size(363, 23);
             this.sepMiscellaneous.TabIndex = 15;
-            this.sepMiscellaneous.Text = "Miscellaneous";
+            this.sepMiscellaneous.Text = "";
             // 
             // sepUpdateDetection
             // 
@@ -608,7 +608,7 @@ namespace Ketarin.Forms
             this.sepUpdateDetection.Name = "sepUpdateDetection";
             this.sepUpdateDetection.Size = new System.Drawing.Size(363, 23);
             this.sepUpdateDetection.TabIndex = 7;
-            this.sepUpdateDetection.Text = "Update detection";
+            this.sepUpdateDetection.Text = "";
             // 
             // sepDownloads
             // 
@@ -618,7 +618,7 @@ namespace Ketarin.Forms
             this.sepDownloads.Name = "sepDownloads";
             this.sepDownloads.Size = new System.Drawing.Size(363, 23);
             this.sepDownloads.TabIndex = 0;
-            this.sepDownloads.Text = "&Downloading";
+            this.sepDownloads.Text = "";
             // 
             // chkIgnoreFileInformation
             // 
@@ -627,7 +627,7 @@ namespace Ketarin.Forms
             this.chkIgnoreFileInformation.Name = "chkIgnoreFileInformation";
             this.chkIgnoreFileInformation.Size = new System.Drawing.Size(297, 17);
             this.chkIgnoreFileInformation.TabIndex = 8;
-            this.chkIgnoreFileInformation.Text = "Ignore file infor&mation (do not re-download if file is missing)";
+            this.chkIgnoreFileInformation.Text = "";
             this.chkIgnoreFileInformation.UseVisualStyleBackColor = true;
             // 
             // chkCheckForUpdatesOnly
@@ -637,7 +637,7 @@ namespace Ketarin.Forms
             this.chkCheckForUpdatesOnly.Name = "chkCheckForUpdatesOnly";
             this.chkCheckForUpdatesOnly.Size = new System.Drawing.Size(221, 17);
             this.chkCheckForUpdatesOnly.TabIndex = 2;
-            this.chkCheckForUpdatesOnly.Text = "Do not download, &check for updates only";
+            this.chkCheckForUpdatesOnly.Text = "";
             this.chkCheckForUpdatesOnly.UseVisualStyleBackColor = true;
             // 
             // chkDownloadExclusively
@@ -647,7 +647,7 @@ namespace Ketarin.Forms
             this.chkDownloadExclusively.Name = "chkDownloadExclusively";
             this.chkDownloadExclusively.Size = new System.Drawing.Size(359, 17);
             this.chkDownloadExclusively.TabIndex = 1;
-            this.chkDownloadExclusively.Text = "Do not download this application &simultaneously with other applications";
+            this.chkDownloadExclusively.Text = "";
             this.chkDownloadExclusively.UseVisualStyleBackColor = true;
             // 
             // txtUseVariablesForChanges
@@ -666,7 +666,7 @@ namespace Ketarin.Forms
             this.lblUseVariableForChanges.Name = "lblUseVariableForChanges";
             this.lblUseVariableForChanges.Size = new System.Drawing.Size(247, 13);
             this.lblUseVariableForChanges.TabIndex = 9;
-            this.lblUseVariableForChanges.Text = "&Use the following variable as indicator for changes:";
+            this.lblUseVariableForChanges.Text = "";
             // 
             // tpCommands
             // 
@@ -675,7 +675,7 @@ namespace Ketarin.Forms
             this.tpCommands.Name = "tpCommands";
             this.tpCommands.Size = new System.Drawing.Size(375, 303);
             this.tpCommands.TabIndex = 2;
-            this.tpCommands.Text = "Commands";
+            this.tpCommands.Text = "";
             this.tpCommands.UseVisualStyleBackColor = true;
             // 
             // tableLayoutCommands
@@ -727,7 +727,7 @@ namespace Ketarin.Forms
             this.lblCommandBefore.Name = "lblCommandBefore";
             this.lblCommandBefore.Size = new System.Drawing.Size(256, 13);
             this.lblCommandBefore.TabIndex = 0;
-            this.lblCommandBefore.Text = "Execute the following command &before downloading:";
+            this.lblCommandBefore.Text = "";
             // 
             // pnlCommandAfter
             // 
@@ -761,7 +761,7 @@ namespace Ketarin.Forms
             this.lblExecuteCommand.Name = "lblExecuteCommand";
             this.lblExecuteCommand.Size = new System.Drawing.Size(247, 13);
             this.lblExecuteCommand.TabIndex = 2;
-            this.lblExecuteCommand.Text = "Execute the following command &after downloading:";
+            this.lblExecuteCommand.Text = "";
             // 
             // tpInformation
             // 
@@ -773,7 +773,7 @@ namespace Ketarin.Forms
             this.tpInformation.Name = "tpInformation";
             this.tpInformation.Size = new System.Drawing.Size(375, 303);
             this.tpInformation.TabIndex = 3;
-            this.tpInformation.Text = "Information";
+            this.tpInformation.Text = "";
             this.tpInformation.UseVisualStyleBackColor = true;
             // 
             // txtNotes
@@ -796,7 +796,7 @@ namespace Ketarin.Forms
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(38, 13);
             this.lblNotes.TabIndex = 3;
-            this.lblNotes.Text = "N&otes:";
+            this.lblNotes.Text = "";
             // 
             // txtWebsite
             // 
@@ -814,7 +814,7 @@ namespace Ketarin.Forms
             this.lblWebsite.Name = "lblWebsite";
             this.lblWebsite.Size = new System.Drawing.Size(49, 13);
             this.lblWebsite.TabIndex = 0;
-            this.lblWebsite.Text = "&Website:";
+            this.lblWebsite.Text = "";
             // 
             // tpSetup
             // 
@@ -826,7 +826,7 @@ namespace Ketarin.Forms
             this.tpSetup.Padding = new System.Windows.Forms.Padding(3);
             this.tpSetup.Size = new System.Drawing.Size(375, 303);
             this.tpSetup.TabIndex = 4;
-            this.tpSetup.Text = "Setup";
+            this.tpSetup.Text = "";
             this.tpSetup.UseVisualStyleBackColor = true;
             // 
             // bAddInstruction
@@ -839,7 +839,7 @@ namespace Ketarin.Forms
             this.bAddInstruction.Size = new System.Drawing.Size(105, 23);
             this.bAddInstruction.SplitMenu = this.cmnuAddInstruction;
             this.bAddInstruction.TabIndex = 3;
-            this.bAddInstruction.Text = "Add instruction";
+            this.bAddInstruction.Text = "";
             this.bAddInstruction.UseVisualStyleBackColor = true;
             // 
             // cmnuAddInstruction
@@ -853,25 +853,25 @@ namespace Ketarin.Forms
             // mnuStartProcess
             // 
             this.mnuStartProcess.Index = 0;
-            this.mnuStartProcess.Text = "&Start process...";
+            this.mnuStartProcess.Text = "";
             this.mnuStartProcess.Click += new System.EventHandler(this.mnuStartProcess_Click);
             // 
             // mnuCloseProcess
             // 
             this.mnuCloseProcess.Index = 1;
-            this.mnuCloseProcess.Text = "Cl&ose process...";
+            this.mnuCloseProcess.Text = "";
             this.mnuCloseProcess.Click += new System.EventHandler(this.mnuCloseProcess_Click);
             // 
             // mnuCopyFile
             // 
             this.mnuCopyFile.Index = 2;
-            this.mnuCopyFile.Text = "&Copy file...";
+            this.mnuCopyFile.Text = "";
             this.mnuCopyFile.Click += new System.EventHandler(this.mnuCopyFile_Click);
             // 
             // mnuCustomCommand
             // 
             this.mnuCustomCommand.Index = 3;
-            this.mnuCustomCommand.Text = "C&ustom command...";
+            this.mnuCustomCommand.Text = "";
             this.mnuCustomCommand.Click += new System.EventHandler(this.mnuCustomCommand_Click);
             // 
             // label1
@@ -881,7 +881,7 @@ namespace Ketarin.Forms
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "I&nstructions to follow for setup:";
+            this.label1.Text = "";
             // 
             // instructionsListBox
             // 
@@ -904,7 +904,7 @@ namespace Ketarin.Forms
             this.bSaveAsDefault.Name = "bSaveAsDefault";
             this.bSaveAsDefault.Size = new System.Drawing.Size(99, 23);
             this.bSaveAsDefault.TabIndex = 98;
-            this.bSaveAsDefault.Text = "Save as &default";
+            this.bSaveAsDefault.Text = "";
             this.bSaveAsDefault.UseVisualStyleBackColor = true;
             this.bSaveAsDefault.Click += new System.EventHandler(this.bSaveAsDefault_Click);
             // 
@@ -925,7 +925,7 @@ namespace Ketarin.Forms
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "New Application";
+            this.Text = "";
             this.pnlDownloadSource.ResumeLayout(false);
             this.pnlDownloadSource.PerformLayout();
             this.pnlBeta.ResumeLayout(false);

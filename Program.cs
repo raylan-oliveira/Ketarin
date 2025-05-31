@@ -38,6 +38,9 @@ namespace Ketarin
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Forçar idioma português brasileiro
+            Ketarin.Localization.LocalizationManager.LoadLanguage("pt-BR");
+            
             // Set an error handler (just a message box) for unexpected exceptions in threads
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 

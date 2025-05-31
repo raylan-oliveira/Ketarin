@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Xml.Serialization;
+using Ketarin.Localization;
 
 namespace Ketarin
 {
@@ -93,13 +94,46 @@ namespace Ketarin
             {
                 proc.WaitForExit();
 
-                if (proc.ExitCode != 0)
+                if (this.WaitForExit && proc.ExitCode != 0)
                 {
-                    throw new ApplicationException(string.Format("Process exited with error code {0}", proc.ExitCode));
+                    string friendlyMessage = GetFriendlyErrorMessage(proc.ExitCode);
+                    string errorMessage = LocalizationManager.GetString("ProcessExitedWithErrorCode", "Process exited with error code {0}");
+                    
+                    if (!string.IsNullOrEmpty(friendlyMessage))
+                    {
+                        errorMessage += " - " + friendlyMessage;
+                    }
+                    
+                    throw new ApplicationException(string.Format(errorMessage, proc.ExitCode));
                 }
             }
         }
 
+        /// <summary>
+        /// Mapeia códigos de erro comuns para mensagens amigáveis
+        /// </summary>
+        /// <param name="exitCode">Código de saída do processo</param>
+        /// <returns>Mensagem amigável explicando o erro</returns>
+        
+
+        private string GetFriendlyErrorMessage(int exitCode)
+        {
+            switch (exitCode)
+            {
+                case 1603:
+                    return LocalizationManager.GetString("PermissionError", "Permission error - Run as administrator");
+                case 1602:
+                    return LocalizationManager.GetString("MSIInstallationCancelled", "MSI installation cancelled by user");
+                case 1618:
+                    return LocalizationManager.GetString("AnotherInstallationInProgress", "Another installation is already in progress");
+                case 1625:
+                    return LocalizationManager.GetString("InstallationBlocked", "Installation blocked by system policy");
+                case 3010:
+                    return LocalizationManager.GetString("SystemRebootRequired", "System reboot required");
+                default:
+                    return null;
+            }
+        }
         #endregion
 
         public override string ToString()

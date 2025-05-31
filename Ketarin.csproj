@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ketarin</RootNamespace>
     <AssemblyName>Ketarin</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>ketarin.ico</ApplicationIcon>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -152,6 +152,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDBurnerXP\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IKetarinRpc.cs" />
+    <Compile Include="Localization\LocalizationHelper.cs" />
+    <Compile Include="Localization\LocalizationManager.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDBurnerXP\ProgressDialog.Designer.cs">

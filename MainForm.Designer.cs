@@ -140,21 +140,21 @@
             this.m_VistaMenu.SetImage(this.cmnuUpdate, global::Ketarin.Properties.Resources.Restart);
             this.cmnuUpdate.Index = 0;
             this.cmnuUpdate.Shortcut = System.Windows.Forms.Shortcut.CtrlU;
-            this.cmnuUpdate.Text = "&Update";
+            this.cmnuUpdate.Text = Ketarin.Localization.LocalizationManager.GetString("Update", "&Update");
             this.cmnuUpdate.Click += new System.EventHandler(this.cmuUpdate_Click);
             // 
             // cmnuCheckForUpdate
             // 
             this.cmnuCheckForUpdate.Index = 1;
             this.cmnuCheckForUpdate.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftU;
-            this.cmnuCheckForUpdate.Text = "C&heck for update";
+            this.cmnuCheckForUpdate.Text = Ketarin.Localization.LocalizationManager.GetString("CheckForUpdate", "C&heck for update");
             this.cmnuCheckForUpdate.Click += new System.EventHandler(this.cmnuCheckForUpdate_Click);
             // 
             // cmnuForceDownload
             // 
             this.cmnuForceDownload.Index = 2;
             this.cmnuForceDownload.Shortcut = System.Windows.Forms.Shortcut.CtrlF5;
-            this.cmnuForceDownload.Text = "&Force download";
+            this.cmnuForceDownload.Text = Ketarin.Localization.LocalizationManager.GetString("ForceDownload", "&Force download");
             this.cmnuForceDownload.Click += new System.EventHandler(this.cmnuForceDownload_Click);
             // 
             // menuItem2
@@ -165,13 +165,13 @@
             // cmnuInstall
             // 
             this.cmnuInstall.Index = 4;
-            this.cmnuInstall.Text = "&Install";
+            this.cmnuInstall.Text = Ketarin.Localization.LocalizationManager.GetString("Install", "&Install");
             this.cmnuInstall.Click += new System.EventHandler(this.cmnuInstall_Click);
             // 
             // cmnuUpdateInstall
             // 
             this.cmnuUpdateInstall.Index = 5;
-            this.cmnuUpdateInstall.Text = "Upda&te and install";
+            this.cmnuUpdateInstall.Text = Ketarin.Localization.LocalizationManager.GetString("UpdateAndInstall", "Upda&te and install");
             this.cmnuUpdateInstall.Click += new System.EventHandler(this.cmnuUpdateInstall_Click);
             // 
             // menuItem1
@@ -184,12 +184,12 @@
             this.cmnuCommands.Index = 7;
             this.cmnuCommands.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.cmnuRunPostDownload});
-            this.cmnuCommands.Text = "Com&mands";
+            this.cmnuCommands.Text = Ketarin.Localization.LocalizationManager.GetString("Commands", "Com&mands");
             // 
             // cmnuRunPostDownload
             // 
             this.cmnuRunPostDownload.Index = 0;
-            this.cmnuRunPostDownload.Text = "&Run post-download command";
+            this.cmnuRunPostDownload.Text = Ketarin.Localization.LocalizationManager.GetString("RunPostDownloadCommand", "&Run post-download command");
             this.cmnuRunPostDownload.Click += new System.EventHandler(this.cmnuRunPostDownload_Click);
             // 
             // menuItem5
@@ -201,13 +201,13 @@
             // 
             this.cmnuOpenFile.Enabled = false;
             this.cmnuOpenFile.Index = 9;
-            this.cmnuOpenFile.Text = "&Open file";
+            this.cmnuOpenFile.Text = Ketarin.Localization.LocalizationManager.GetString("OpenFile", "&Open file");
             this.cmnuOpenFile.Click += new System.EventHandler(this.cmnuOpenFile_Click);
             // 
             // cmnuOpenFolder
             // 
             this.cmnuOpenFolder.Index = 10;
-            this.cmnuOpenFolder.Text = "Ope&n folder";
+            this.cmnuOpenFolder.Text = Ketarin.Localization.LocalizationManager.GetString("OpenFolder", "Ope&n folder");
             this.cmnuOpenFolder.Click += new System.EventHandler(this.cmnuOpenFolder_Click);
             // 
             // cmnuProperties
@@ -215,7 +215,7 @@
             this.cmnuProperties.Enabled = false;
             this.cmnuProperties.Index = 11;
             this.cmnuProperties.Shortcut = System.Windows.Forms.Shortcut.F9;
-            this.cmnuProperties.Text = "File propertie&s";
+            this.cmnuProperties.Text = Ketarin.Localization.LocalizationManager.GetString("FileProperties", "File propertie&s");
             this.cmnuProperties.Click += new System.EventHandler(this.cmnuProperties_Click);
             // 
             // cmnuRename
@@ -223,7 +223,7 @@
             this.cmnuRename.Enabled = false;
             this.cmnuRename.Index = 12;
             this.cmnuRename.Shortcut = System.Windows.Forms.Shortcut.F2;
-            this.cmnuRename.Text = "&Rename file";
+            this.cmnuRename.Text = Ketarin.Localization.LocalizationManager.GetString("RenameFile", "&Rename file");
             this.cmnuRename.Click += new System.EventHandler(this.cmnuRename_Click);
             // 
             // menuItem4
@@ -301,7 +301,7 @@
             this.m_VistaMenu.SetImage(this.mnuNew, global::Ketarin.Properties.Resources.AddSmall);
             this.mnuNew.Index = 0;
             this.mnuNew.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
-            this.mnuNew.Text = "&New application...";
+            this.mnuNew.Text = Ketarin.Localization.LocalizationManager.GetString("NewApplication", "&New application...");
             this.mnuNew.Click += new System.EventHandler(this.mnuAddNew_Click);
             // 
             // mnuImport

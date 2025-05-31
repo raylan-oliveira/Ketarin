@@ -1,0 +1,485 @@
+# Ketarin - Arquivo de localização para Português Brasileiro
+# Formato: CHAVE=VALOR
+# Linhas que começam com # são comentários
+
+# Botões comuns
+OK="OK"
+Cancel="Cancelar"
+Close="Fechar"
+Yes="Sim"
+No="Não"
+Browse="Procurar..."
+Add="Adicionar"
+Remove="Remover"
+Edit="Editar"
+Delete="Excluir"
+Save="Salvar"
+Load="Carregar"
+Find="Localizar"
+Search="Pesquisar"
+Copy="Copiar"
+Paste="Colar"
+Cut="Recortar"
+SelectAll="Selecionar Tudo"
+Clear="Limpar"
+
+# Menu principal
+File="Arquivo"
+New="Novo"
+Import="Importar"
+Export="Exportar"
+Settings="Configurações"
+Exit="Sair"
+View="Visualizar"
+Log="Log"
+Help="Ajuda"
+About="Sobre"
+
+# Formulário principal
+MainFormTitle="Ketarin"
+Update="Atualizar"
+CheckForUpdate="Verificar atualizações"
+ForceDownload="Forçar download"
+Install="Instalar"
+UpdateAndInstall="Atualizar e instalar"
+OpenFile="Abrir arquivo"
+OpenFolder="Abrir pasta"
+Properties="Propriedades"
+Rename="Renomear"
+Commands="Comandos"
+RunPostDownload="Executar pós-download"
+
+# Colunas da lista
+ApplicationName="Nome da aplicação"
+LastUpdate="Última atualização"
+Progress="Progresso"
+Target="Destino"
+Category="Categoria"
+Status="Status"
+
+# Diálogo de instalação
+InstallingApplications="Instalando Aplicações"
+InstallingApplication="Instalando aplicação"
+ShowDetails="Mostrar detalhes"
+HideDetails="Ocultar detalhes"
+Time="Hora"
+Message="Mensagem"
+Events="Eventos"
+
+# Diálogo de configurações
+# Settings Dialog
+SettingsTitle="Configurações"
+General="Geral"
+Connection="Conexão"
+Commands="Comandos"
+Hotkeys="Teclas de atalho"
+GlobalVariables="Variáveis globais"
+UpdateAtStartup="Atualizar automaticamente na inicialização"
+AvoidBeta="Evitar versões beta no FileHippo"
+AvoidNonBinary="Evitar baixar arquivos não-binários (páginas de erro potenciais)"
+UpdateOnlineDatabase="Verificar atualizações no banco de dados online"
+MinimizeToTray="Minimizar para a bandeja"
+AutoBackups="Criar backups automáticos do banco de dados"
+OpenWebsiteOnDoubleClick="Abrir site ao clicar duas vezes em uma aplicação (se especificado)"
+CustomColumns="Colunas personalizadas"
+ConnectionTimeout="Timeout de conexão:"
+Seconds="segundos"
+ParallelDownloads="Número de downloads paralelos:"
+RetriesPerDownload="Número de tentativas por download:"
+SegmentsPerDownload="Número de segmentos por download:"
+DefaultUserAgent="Agente de usuário padrão:"
+ProxySettings="Configurações de proxy HTTP"
+Server="Servidor:"
+UserName="Nome de usuário:"
+Password="Senha:"
+GlobalVariablesDescription="Variáveis globais podem ser usadas em todas as aplicações usando a sintaxe {nomedavariavel}. Se você quiser usar uma variável em uma expressão regular, use {{nomedavariavel}}."
+CommandEvent="Evento de comando:"
+Actions="Ações:"
+Hotkey="Tecla de atalho:"
+DoubleClick="Clique duplo para atribuir"
+Import="Importar..."
+Export="Exportar..."
+Name="Nome"
+Value="Valor"
+Add="Adicionar..."
+Edit="Editar"
+Remove="Remover"
+NumberOfParallelDownloads="Número de downloads paralelos"
+NumberOfRetries="Número de tentativas por download"
+AvoidNonBinary="Evitar download de arquivos não-binários (páginas de erro potenciais)"
+CustomColumns="Colunas personalizadas"
+OpenWebsite="Abrir website ao clicar duas vezes em uma aplicação (se especificado)"
+AutomaticallyCreateBackups="Criar backups do banco de dados automaticamente"
+MinimizeToTray="Minimizar para a bandeja do sistema"
+CheckForUpdatesOnlineDatabase="Verificar atualizações no banco de dados online"
+DefaultUserAgent="User agent padrão"
+NumberOfSegments="Número de segmentos por download"
+HTTPProxySettings="Configurações de proxy HTTP"
+EditCommandForEvent="Editar comando para evento"
+PressKeys="Pressione as teclas"
+Actions="Ações"
+
+# Diálogo de nova aplicação
+NewApplication="Nova Aplicação"
+EditApplication="Editar {0}"
+ApplicationNameLabel="Nome da aplicação"
+BetaVersions="Versões beta"
+Avoid="Evitar"
+Download="Download"
+Default="(Padrão)"
+Variables="Variáveis"
+FileHippoID="ID do FileHippo"
+URL="URL"
+SaveInFolder="Salvar na pasta"
+SaveToFile="Salvar no arquivo"
+AlwaysDeletePrevious="Sempre excluir arquivo baixado anteriormente"
+ShareOnline="Compartilhar esta aplicação online com outros"
+SpoofHTTPReferer="Falsificar referer HTTP"
+Application="Aplicação"
+AdvancedSettings="Configurações avançadas"
+TotalNumberOfFiles="Número total de arquivos para manter (original + backups)"
+Enabled="Habilitado"
+Variable="Variável"
+CompareWithHash="Comparar com valor hash"
+UserAgent="User agent"
+Miscellaneous="Diversos"
+UpdateDetection="Detecção de atualização"
+Downloading="Baixando"
+IgnoreFileInformation="Ignorar informações do arquivo (não baixar novamente se o arquivo estiver ausente)"
+DoNotDownload="Não baixar, apenas verificar atualizações"
+DoNotDownloadSimultaneously="Não baixar esta aplicação simultaneamente com outras aplicações"
+UseVariableForChanges="Usar a seguinte variável como indicador de mudanças"
+Information="Informações"
+Notes="Notas"
+Website="Website"
+Setup="Configuração"
+AddInstruction="Adicionar instrução"
+StartProcess="Iniciar processo..."
+CloseProcess="Fechar processo..."
+CopyFile="Copiar arquivo..."
+CustomCommand="Comando personalizado..."
+InstructionsToFollow="Instruções a seguir para configuração"
+SaveAsDefault="Salvar como padrão"
+
+# Diálogo de variáveis
+EditVariables="Editar Variáveis - {0}"
+VariablesLabel="Variáveis"
+ContentsFromURL="Conteúdo da URL"
+LoadButton="Carregar"
+UseSelectionAsStart="Usar seleção como início"
+UseSelectionAsEnd="Usar seleção como fim"
+SearchWithinContents="Pesquisar dentro do conteúdo"
+UseRegularExpression="Usar expressão regular"
+ContentFromURLStartEnd="Conteúdo da URL (início/fim)"
+ContentFromURLRegex="Conteúdo da URL (Expressão Regular)"
+TextualContent="Conteúdo textual"
+RTL="RTL"
+POSTData="Dados POST"
+HowAreVariablesUsed="Como as variáis são usadas?"
+GoToMatch="Ir para correspondência"
+CopyMatch="Copiar correspondência"
+ShowInWebBrowser="Mostrar no navegador web"
+WrapLines="Quebrar linhas"
+RenameVariable="Renomear variável"
+Evaluating="Avaliando..."
+
+# Diálogos de instrução
+StartProcessTitle="Iniciar Processo"
+CloseProcessTitle="Fechar Processo"
+CopyFileTitle="Copiar Arquivo"
+CustomSetupInstruction="Instrução de Configuração Personalizada"
+ProgramToStart="Programa para iniciar"
+Arguments="Argumentos"
+InsertArgument="Inserir"
+Passive="/passive (Hotfixes MS)"
+QN="/qn (Instalador MSI)"
+S="/s (InstallShield)"
+NSIS="/S (NSIS)"
+VerySilent="/verysilent (InnoSetup)"
+HowToControlSilentSetups="Como controlar instalações silenciosas?"
+OverrideEnvironmentVariables="Substituir variáveis de ambiente"
+Name="Nome"
+Value="Valor"
+WaitUntilExit="Aguardar até que o processo termine"
+CloseAllProcesses="Fechar todos os processos com o seguinte nome"
+SourceFile="Arquivo de origem"
+TargetFile="Arquivo de destino"
+Environment="Ambiente"
+
+# Diálogos diversos
+AboutTitle="Sobre"
+VersionLabel="Versão"
+Author="Autor"
+Database="Banco de dados"
+License="Licença"
+ImagesExcluded="Isso exclui os ícones usados, que são protegidos por direitos autorais da VirtualLNK, LLC."
+WebsiteLabel="Website"
+GPLLicense="GNU GPL v.2"
+ErrorsTitle="Erros"
+ErrorsDescription="Os seguintes erros ocorreram ao atualizar as aplicações"
+CopyToClipboard="Copiar para área de transferência"
+ErrorColumn="Erro"
+LogTitle="Log"
+ClearLog="Limpar log"
+NewCustomColumn="Nova Coluna Personalizada"
+ColumnName="Nome da coluna"
+ColumnValue="Valor da coluna"
+Example="Exemplo: {filesize:formatfilesize}"
+InformationRequired="Informação necessária"
+NewVariable="Nova Variável"
+VariableName="Nome da variável"
+NewSnippet="Novo Snippet"
+SnippetName="Nome do snippet"
+EditValue="Editar valor"
+WordWrap="Quebra de linha"
+EditPOSTData="Editar Dados POST"
+POSTDataToSend="Dados POST para enviar com URL"
+DeleteApplication="Excluir aplicação"
+DeleteApplicationQuestion="Você realmente deseja excluir a aplicação '{0}'?"
+DeleteApplicationAndFile="Excluir aplicação e arquivo"
+DeleteSelectedApplications="Você realmente deseja excluir as aplicações selecionadas da lista?"
+RenameFile="Renomear Arquivo"
+FileName="Nome do arquivo"
+SimilarApplications="Aplicações Similares"
+ExistingApplications="Aplicações existentes"
+SimilarApplicationsText="O nome da aplicação que você escolheu já existe no banco de dados online. Por favor"
+NewName="Novo nome"
+ChooseApplicationsToInstall="Escolher Aplicações para Instalar"
+InstallFollowingList="Instalar a seguinte lista de aplicações"
+InstallFromList="Instalar essas aplicações da lista"
+NewList="Nova"
+RemoveList="Remover"
+Selection="Seleção"
+SelectNone="Selecionar nenhuma"
+InvertSelection="Inverter seleção"
+SaveAsNewList="Salvar como nova lista"
+AddApp="Adicionar..."
+RemoveApp="Remover"
+ListDeleted="Lista excluída. Desfazer"
+TileView="Visualização em mosaico"
+DetailsView="Visualização detalhada"
+AvailableApplications="Aplicações disponíveis"
+LastUpdated="Última atualização"
+Uses="Usos"
+AddApplications="Adicionar Aplicações"
+ApplicationsToAdd="Aplicações para adicionar"
+ImportApplication="Importar Aplicação"
+Top50="Top 50"
+WebBrowserView="Visualização do Navegador Web"
+
+# Mensagens de erro comuns
+ProcessExitedWithErrorCode="Processo terminou com código de erro {0}"
+SetupFailed="Instalação falhou"
+PermissionError="Erro de permissão - Execute como administrador"
+InstallationBlocked="Instalação bloqueada pela política do sistema"
+ContactAdministrator="Entre em contato com o administrador sobre as Políticas de Grupo"
+MSIInstallationCancelled="Instalação MSI cancelada pelo usuário"
+AnotherInstallationInProgress="Outra instalação já está em andamento"
+SystemRebootRequired="Reinicialização do sistema necessária"
+
+# Status da aplicação
+StatusIdle="Inativo"
+StatusDownloading="Baixando"
+StatusInstalling="Instalando"
+StatusCompleted="Concluído"
+StatusError="Erro"
+StatusUpdating="Atualizando"
+
+# Mensagens do sistema
+ApplicationsSelected="{0} aplicação(ões) selecionada(s)"
+TotalApplications="Total: {0} aplicação(ões)"
+UpdatedApplications="Atualizado: {0}"
+FailedApplications="Falhou: {0}"
+NoUpdatesAvailable="Nenhuma atualização disponível"
+UpdateCheckComplete="Verificação de atualização concluída"
+DownloadComplete="Download concluído"
+InstallationComplete="Instalação concluída"
+
+# MainForm localization
+FileMenu="Arquivo"
+NewApplication="Nova aplicação..."
+Import="Importar..."
+ExportSelected="Exportar selecionadas..."
+ExportAll="Exportar todas..."
+Exit="Sair"
+
+ViewMenu="Visualizar"
+ShowLog="Mostrar log"
+ShowGroups="Mostrar grupos"
+ShowStatusBar="Mostrar barra de status"
+AutoScroll="Rolagem automática"
+Find="Localizar"
+
+HelpMenu="Ajuda"
+Tutorial="Tutorial"
+About="Sobre"
+
+# Context menu
+Update="Atualizar"
+CheckForUpdate="Verificar atualizações"
+ForceDownload="Forçar download"
+Install="Instalar"
+UpdateAndInstall="Atualizar e instalar"
+Commands="Comandos"
+RunPostDownloadCommand="Executar comando pós-download"
+OpenFile="Abrir arquivo"
+OpenFolder="Abrir pasta"
+FileProperties="Propriedades do arquivo"
+RenameFile="Renomear arquivo"
+Edit="Editar"
+Delete="Excluir"
+Copy="Copiar"
+Paste="Colar"
+SelectAll="Selecionar tudo"
+InvertSelection="Inverter seleção"
+
+# Buttons
+UpdateAll="Atualizar todas"
+AddApplication="Adicionar aplicação"
+
+# Run button context menu
+CheckAndDownload="Verificar e baixar"
+OnlyCheck="Apenas verificar"
+
+# Add button context menu
+ImportFromFile="Importar de arquivo..."
+ImportFromOnline="Importar do banco de dados online..."
+
+# Tray icon
+Show="Mostrar"
+
+# Column headers
+Name="Nome"
+LastUpdate="Última atualização"
+Progress="Progresso"
+Target="Destino"
+Category="Categoria"
+Status="Status"
+
+# Status values
+StatusDownloading="Baixando"
+StatusFailed="Falhou"
+StatusIdle="Inativo"
+StatusNoUpdate="Sem atualização"
+StatusUpdated="Atualizado"
+StatusUpdateAvailable="Atualização disponível"
+
+# Status bar
+NumberOfApplications="Número de aplicações: "
+SelectedApplications="Aplicações selecionadas: "
+StatusBarFormat="Por status: {0} Inativas, {1} Atualizações, {2} Finalizadas, {3} Falharam ({4} Desabilitadas)"
+
+# MainForm localization
+MainFormTitle="Ketarin"
+FileMenu="&Arquivo"
+NewApplication="&Nova aplicação..."
+Import="&Importar..."
+ExportSelected="E&xportar selecionados..."
+ExportAll="Exportar &todos..."
+Settings="&Configurações"
+Exit="&Sair"
+ViewMenu="&Visualizar"
+ShowLog="&Mostrar log"
+ShowGroups="Mostrar gr&upos"
+ShowStatusBar="Mostrar barra de &status"
+AutoScroll="&Rolagem automática"
+Find="&Localizar"
+HelpMenu="&Ajuda"
+Tutorial="&Tutorial"
+About="&Sobre"
+Update="&Atualizar"
+CheckForUpdate="V&erificar atualizações"
+ForceDownload="&Forçar download"
+Install="&Instalar"
+UpdateAndInstall="Atualizar e &instalar"
+Commands="Co&mandos"
+RunPostDownloadCommand="&Executar comando pós-download"
+OpenFile="&Abrir arquivo"
+OpenFolder="Abr&ir pasta"
+FileProperties="Propriedades do &arquivo"
+RenameFile="&Renomear arquivo"
+Edit="&Editar"
+Delete="&Excluir"
+Copy="&Copiar"
+Paste="Co&lar"
+SelectAll="Selecionar &tudo"
+InvertSelection="In&verter seleção"
+UpdateAll="&Atualizar todos"
+AddApplication="&Adicionar aplicação"
+CheckAndDownload="Verificar e baixar"
+OnlyCheck="Apenas verificar"
+ImportFromFile="Importar de arquivo..."
+ImportFromOnline="Importar do banco de dados online..."
+Show="Mostrar"
+Name="Nome"
+LastUpdate="Última atualização"
+Progress="Progresso"
+Target="Destino"
+Category="Categoria"
+Status="Status"
+
+# Ícone da bandeja
+TrayIconIdle="Ketarin (Inativo)"
+
+# Barra de status
+StatusSummary="Por status: {0} Inativo, {1} Concluído, {2} Falhou"
+
+# ApplicationJobDialog
+NewApplication=Nova Aplicação
+ApplicationName=Nome da aplicação:
+BetaVersions=Versões beta:
+SpoofReferer=&Falsificar referenciador HTTP:
+UserAgent=Age&nte do usuário:
+UseVariableForChanges=&Usar a seguinte variável como indicador de mudanças:
+CompareWithHash=Comparar com valor &hash:
+Variable=&Variável:
+CommandBefore=Executar o seguinte comando &antes do download:
+CommandAfter=Executar o seguinte comando &após o download:
+Website=&Website:
+Notes=&Notas:
+NumberOfRevisions=Número &total de arquivos para manter (original + backups):
+SetupInstructions=&Instruções a seguir para configuração:
+Enabled=&Habilitado
+DeletePrevious=Sempre excluir arquivo baixado anteriormente
+ShareOnline=&Compartilhar esta aplicação online com outros
+DownloadExclusively=Não baixar esta aplicação &simultaneamente com outras aplicações
+CheckForUpdatesOnly=Não baixar, apenas &verificar atualizações
+IgnoreFileInformation=Ignorar infor&mações do arquivo (não baixar novamente se arquivo estiver ausente)
+Avoid=Evitar
+Default=(Padrão)
+Download=Baixar
+URL=URL:
+FileHippoID=ID do FileHippo:
+SaveInFolder=Salvar na pasta
+SaveToFile=Salvar no arquivo
+DownloadSource=Fonte do download
+DownloadLocation=Local do download
+Downloading=&Baixando
+UpdateDetection=Detecção de atualização
+Miscellaneous=Diversos
+Application=Aplicação
+AdvancedSettings=Configurações avançadas
+Commands=Comandos
+Information=Informações
+Setup=Configuração
+StartProcess=&Iniciar processo...
+CloseProcess=&Fechar processo...
+CopyFile=&Copiar arquivo...
+CustomCommand=Comando &personalizado...
+SaveAsDefault=Salvar como &padrão
+Variables=Variáveis
+AddInstruction=Adicionar instrução
+
+# InstallingApplicationsDialog
+HideDetails=Ocultar detalhes
+SkippedNoInstructions=Ignorado pois não existem instruções de configuração
+UpdatingApplication=Atualizando aplicação {0} de {1}: {2}
+UpdateFailedInstallingPrevious=Atualização falhou, instalando versão disponível anteriormente
+UpdateFailedNoFile=Atualização falhou, nenhum arquivo disponível para instalar
+NoFileAvailable=Nenhum arquivo disponível para instalação
+InstallingApplicationProgress=Instalando aplicação {0} de {1}: {2}
+InstalledSuccessfully=Instalado com sucesso
+ApplicationsInstalledSuccessfully={0} de {1} aplicações instaladas com sucesso.
+InstallingApplications=Instalando Aplicações
+ErrorTipAccessDenied=Dica: Tente executar o Ketarin como administrador ou verifique se o arquivo está sendo usado por outro aplicativo.
+ErrorTipNetwork=Dica: Verifique sua conexão com a internet e tente novamente.

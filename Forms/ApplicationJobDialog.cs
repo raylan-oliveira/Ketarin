@@ -125,6 +125,9 @@ namespace Ketarin.Forms
             this.RefreshVariables();
             this.SetAutocompleteSource();
 
+            // Adicionar chamada para localização
+            ApplyLocalization();
+            
             if (this.m_ApplicationJob != null)
             {
                 this.cboCategory.Text = string.IsNullOrEmpty(this.m_ApplicationJob.Category) ? null : this.m_ApplicationJob.Category;
@@ -602,6 +605,72 @@ namespace Ketarin.Forms
                 };
                 this.instructionsListBox.Panels.Add(panel);
             }
+        }
+
+        private void ApplyLocalization()
+        {
+            // Título do formulário
+            this.Text = Ketarin.Localization.LocalizationManager.GetString("NewApplication", "New Application");
+            
+            // Botões
+            bCancel.Text = Ketarin.Localization.LocalizationManager.GetString("Cancel", "Cancel");
+            bOK.Text = Ketarin.Localization.LocalizationManager.GetString("OK", "OK");
+            bSaveAsDefault.Text = Ketarin.Localization.LocalizationManager.GetString("SaveAsDefault", "Save as &default");
+            bVariables.Text = Ketarin.Localization.LocalizationManager.GetString("Variables", "Variables");
+            bAddInstruction.Text = Ketarin.Localization.LocalizationManager.GetString("AddInstruction", "Add instruction");
+            
+            // Labels
+            lblApplicationName.Text = Ketarin.Localization.LocalizationManager.GetString("ApplicationName", "Application name:");
+            lblCategory.Text = Ketarin.Localization.LocalizationManager.GetString("Category", "Category:");
+            lblBetaVersions.Text = Ketarin.Localization.LocalizationManager.GetString("BetaVersions", "Beta versions:");
+            lblSpoofReferer.Text = Ketarin.Localization.LocalizationManager.GetString("SpoofReferer", "Sp&oof HTTP referer:");
+            lblUserAgent.Text = Ketarin.Localization.LocalizationManager.GetString("UserAgent", "User age&nt:");
+            lblUseVariableForChanges.Text = Ketarin.Localization.LocalizationManager.GetString("UseVariableForChanges", "&Use the following variable as indicator for changes:");
+            lblCompareWithHash.Text = Ketarin.Localization.LocalizationManager.GetString("CompareWithHash", "Compare with &hash value:");
+            lblHashVariable.Text = Ketarin.Localization.LocalizationManager.GetString("Variable", "&Variable:");
+            lblCommandBefore.Text = Ketarin.Localization.LocalizationManager.GetString("CommandBefore", "Execute the following command &before downloading:");
+            lblExecuteCommand.Text = Ketarin.Localization.LocalizationManager.GetString("CommandAfter", "Execute the following command &after downloading:");
+            lblWebsite.Text = Ketarin.Localization.LocalizationManager.GetString("Website", "&Website:");
+            lblNotes.Text = Ketarin.Localization.LocalizationManager.GetString("Notes", "N&otes:");
+            lblNumberOfRevisions.Text = Ketarin.Localization.LocalizationManager.GetString("NumberOfRevisions", "Total &number of files to keep (original + backups):");
+            label1.Text = Ketarin.Localization.LocalizationManager.GetString("SetupInstructions", "I&nstructions to follow for setup:");
+            
+            // Checkboxes
+            chkEnabled.Text = Ketarin.Localization.LocalizationManager.GetString("Enabled", "&Enabled");
+            chkDeletePrevious.Text = Ketarin.Localization.LocalizationManager.GetString("DeletePrevious", "Always delete previously downloaded file");
+            chkShareOnline.Text = Ketarin.Localization.LocalizationManager.GetString("ShareOnline", "Sh&are this application online with others");
+            chkDownloadExclusively.Text = Ketarin.Localization.LocalizationManager.GetString("DownloadExclusively", "Do not download this application &simultaneously with other applications");
+            chkCheckForUpdatesOnly.Text = Ketarin.Localization.LocalizationManager.GetString("CheckForUpdatesOnly", "Do not download, &check for updates only");
+            chkIgnoreFileInformation.Text = Ketarin.Localization.LocalizationManager.GetString("IgnoreFileInformation", "Ignore file infor&mation (do not re-download if file is missing)");
+            
+            // Radio buttons
+            rbBetaAvoid.Text = Ketarin.Localization.LocalizationManager.GetString("Avoid", "Avoid");
+            rbBetaDefault.Text = Ketarin.Localization.LocalizationManager.GetString("Default", "(Default)");
+            rbAlwaysDownload.Text = Ketarin.Localization.LocalizationManager.GetString("Download", "Download");
+            rbFixedUrl.Text = Ketarin.Localization.LocalizationManager.GetString("URL", "URL:");
+            rbFileHippo.Text = Ketarin.Localization.LocalizationManager.GetString("FileHippoID", "FileHippo ID:");
+            rbFolder.Text = Ketarin.Localization.LocalizationManager.GetString("SaveInFolder", "Save in folder");
+            rbFileName.Text = Ketarin.Localization.LocalizationManager.GetString("SaveToFile", "Save to file");
+            
+            // Separadores
+            sepDownload.Text = Ketarin.Localization.LocalizationManager.GetString("DownloadSource", "Download source");
+            sepTarget.Text = Ketarin.Localization.LocalizationManager.GetString("DownloadLocation", "Download location");
+            sepDownloads.Text = Ketarin.Localization.LocalizationManager.GetString("Downloading", "&Downloading");
+            sepUpdateDetection.Text = Ketarin.Localization.LocalizationManager.GetString("UpdateDetection", "Update detection");
+            sepMiscellaneous.Text = Ketarin.Localization.LocalizationManager.GetString("Miscellaneous", "Miscellaneous");
+            
+            // Tabs
+            tpApplication.Text = Ketarin.Localization.LocalizationManager.GetString("Application", "Application");
+            tpSettings.Text = Ketarin.Localization.LocalizationManager.GetString("AdvancedSettings", "Advanced settings");
+            tpCommands.Text = Ketarin.Localization.LocalizationManager.GetString("Commands", "Commands");
+            tpInformation.Text = Ketarin.Localization.LocalizationManager.GetString("Information", "Information");
+            tpSetup.Text = Ketarin.Localization.LocalizationManager.GetString("Setup", "Setup");
+            
+            // Itens de menu
+            mnuStartProcess.Text = Ketarin.Localization.LocalizationManager.GetString("StartProcess", "&Start process...");
+            mnuCloseProcess.Text = Ketarin.Localization.LocalizationManager.GetString("CloseProcess", "Cl&ose process...");
+            mnuCopyFile.Text = Ketarin.Localization.LocalizationManager.GetString("CopyFile", "&Copy file...");
+            mnuCustomCommand.Text = Ketarin.Localization.LocalizationManager.GetString("CustomCommand", "C&ustom command...");
         }
 
         #endregion

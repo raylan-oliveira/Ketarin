@@ -155,12 +155,12 @@ namespace Ketarin
             {
                 switch ((Updater.Status)x)
                 {
-                    case Updater.Status.Downloading: return "Downloading";
-                    case Updater.Status.Failure: return "Failed";
-                    case Updater.Status.Idle: return "Idle";
-                    case Updater.Status.NoUpdate: return "No update";
-                    case Updater.Status.UpdateSuccessful: return "Updated";
-                    case Updater.Status.UpdateAvailable: return "Update available";
+                    case Updater.Status.Downloading: return Ketarin.Localization.LocalizationManager.GetString("StatusDownloading", "Downloading");
+                    case Updater.Status.Failure: return Ketarin.Localization.LocalizationManager.GetString("StatusFailed", "Failed");
+                    case Updater.Status.Idle: return Ketarin.Localization.LocalizationManager.GetString("StatusIdle", "Idle");
+                    case Updater.Status.NoUpdate: return Ketarin.Localization.LocalizationManager.GetString("StatusNoUpdate", "No update");
+                    case Updater.Status.UpdateSuccessful: return Ketarin.Localization.LocalizationManager.GetString("StatusUpdated", "Updated");
+                    case Updater.Status.UpdateAvailable: return Ketarin.Localization.LocalizationManager.GetString("StatusUpdateAvailable", "Update available");
                 }
                 return string.Empty;
             };
@@ -376,6 +376,9 @@ namespace Ketarin
             RebuildCustomColumns();
 
             base.OnLoad(e);
+            
+            // Apply localization
+            ApplyLocalization();
 
             mnuShowGroups.Checked = Conversion.ToBoolean(Settings.GetValue("Ketarin", "ShowGroups", true));
             mnuAutoScroll.Checked = Conversion.ToBoolean(Settings.GetValue("Ketarin", "AutoScroll", true));
@@ -1235,8 +1238,8 @@ namespace Ketarin
 
         private void UpdateStatusbar()
         {
-            tbTotalApplications.Text = "Number of applications: " + olvJobs.Items.Count;
-            tbSelectedApplications.Text = "Selected applications: " + olvJobs.SelectedIndices.Count;
+            tbTotalApplications.Text = Ketarin.Localization.LocalizationManager.GetString("NumberOfApplications", "Number of applications: ") + olvJobs.Items.Count;
+            tbSelectedApplications.Text = Ketarin.Localization.LocalizationManager.GetString("SelectedApplications", "Selected applications: ") + olvJobs.SelectedIndices.Count;
         }
 
         /// <summary>
@@ -1275,7 +1278,8 @@ namespace Ketarin
                 }
             }
 
-            tbNumByStatus.Text = string.Format("By status: {0} Idle, {1} Updates, {2} Finished, {3} Failed ({4} Disabled)", idle, updated, finished, failed, disabled);
+            string statusFormat = Ketarin.Localization.LocalizationManager.GetString("StatusBarFormat", "By status: {0} Idle, {1} Updates, {2} Finished, {3} Failed ({4} Disabled)");
+            tbNumByStatus.Text = string.Format(statusFormat, idle, updated, finished, failed, disabled);
         }
 
         private void mnuLog_Click(object sender, EventArgs e)
@@ -1331,5 +1335,86 @@ namespace Ketarin
         }
 
         #endregion
+
+        private void ApplyLocalization()
+        {
+            // Main form title
+            this.Text = Ketarin.Localization.LocalizationManager.GetString("MainFormTitle", "Ketarin");
+            
+            // File menu
+            mnuFile.Text = Ketarin.Localization.LocalizationManager.GetString("FileMenu", "&File");
+            mnuNew.Text = Ketarin.Localization.LocalizationManager.GetString("NewApplication", "&New application...");
+            mnuImport.Text = Ketarin.Localization.LocalizationManager.GetString("Import", "&Import...");
+            mnuExportSelected.Text = Ketarin.Localization.LocalizationManager.GetString("ExportSelected", "E&xport selected...");
+            mnuExportAll.Text = Ketarin.Localization.LocalizationManager.GetString("ExportAll", "Export &all...");
+            mnuSettings.Text = Ketarin.Localization.LocalizationManager.GetString("Settings", "&Settings");
+            mnuExit.Text = Ketarin.Localization.LocalizationManager.GetString("Exit", "&Exit");
+            
+            // View menu
+            mnuView.Text = Ketarin.Localization.LocalizationManager.GetString("ViewMenu", "&View");
+            mnuLog.Text = Ketarin.Localization.LocalizationManager.GetString("ShowLog", "&Show log");
+            mnuShowGroups.Text = Ketarin.Localization.LocalizationManager.GetString("ShowGroups", "Show gr&oups");
+            mnuShowStatusBar.Text = Ketarin.Localization.LocalizationManager.GetString("ShowStatusBar", "Show status &bar");
+            mnuAutoScroll.Text = Ketarin.Localization.LocalizationManager.GetString("AutoScroll", "&Auto scroll");
+            mnuFind.Text = Ketarin.Localization.LocalizationManager.GetString("Find", "&Find");
+            
+            // Help menu
+            mnuHelp.Text = Ketarin.Localization.LocalizationManager.GetString("HelpMenu", "&Help");
+            mnuTutorial.Text = Ketarin.Localization.LocalizationManager.GetString("Tutorial", "&Tutorial");
+            mnuAbout.Text = Ketarin.Localization.LocalizationManager.GetString("About", "&About");
+            
+            // Context menu items
+            cmnuUpdate.Text = Ketarin.Localization.LocalizationManager.GetString("Update", "&Update");
+            cmnuCheckForUpdate.Text = Ketarin.Localization.LocalizationManager.GetString("CheckForUpdate", "C&heck for update");
+            cmnuForceDownload.Text = Ketarin.Localization.LocalizationManager.GetString("ForceDownload", "&Force download");
+            cmnuInstall.Text = Ketarin.Localization.LocalizationManager.GetString("Install", "&Install");
+            cmnuUpdateInstall.Text = Ketarin.Localization.LocalizationManager.GetString("UpdateAndInstall", "Upda&te and install");
+            cmnuCommands.Text = Ketarin.Localization.LocalizationManager.GetString("Commands", "Com&mands");
+            cmnuRunPostDownload.Text = Ketarin.Localization.LocalizationManager.GetString("RunPostDownloadCommand", "&Run post-download command");
+            cmnuOpenFile.Text = Ketarin.Localization.LocalizationManager.GetString("OpenFile", "&Open file");
+            cmnuOpenFolder.Text = Ketarin.Localization.LocalizationManager.GetString("OpenFolder", "Ope&n folder");
+            cmnuProperties.Text = Ketarin.Localization.LocalizationManager.GetString("FileProperties", "File propertie&s");
+            cmnuRename.Text = Ketarin.Localization.LocalizationManager.GetString("RenameFile", "&Rename file");
+            cmnuEdit.Text = Ketarin.Localization.LocalizationManager.GetString("Edit", "&Edit");
+            cmnuDelete.Text = Ketarin.Localization.LocalizationManager.GetString("Delete", "&Delete");
+            cmnuCopy.Text = Ketarin.Localization.LocalizationManager.GetString("Copy", "&Copy");
+            cmnuPaste.Text = Ketarin.Localization.LocalizationManager.GetString("Paste", "&Paste");
+            mnuSelectAll.Text = Ketarin.Localization.LocalizationManager.GetString("SelectAll", "Select &all");
+            mnuInvert.Text = Ketarin.Localization.LocalizationManager.GetString("InvertSelection", "In&vert selection");
+            
+            // Buttons
+            bRun.Text = Ketarin.Localization.LocalizationManager.GetString("UpdateAll", "&Update all");
+            bInstall.Text = Ketarin.Localization.LocalizationManager.GetString("Install", "&Install");
+            bAddApplication.Text = Ketarin.Localization.LocalizationManager.GetString("AddApplication", "&Add application");
+            
+            // Context menu for run button
+            cmnuCheckAndDownload.Text = Ketarin.Localization.LocalizationManager.GetString("CheckAndDownload", "Check and download");
+            cmnuOnlyCheck.Text = Ketarin.Localization.LocalizationManager.GetString("OnlyCheck", "Only check");
+            
+            // Context menu for add button
+            cmnuAdd.Text = Ketarin.Localization.LocalizationManager.GetString("AddApplication", "&Add application");
+            cmnuImportFile.Text = Ketarin.Localization.LocalizationManager.GetString("ImportFromFile", "Import from file...");
+            cmnuImportOnline.Text = Ketarin.Localization.LocalizationManager.GetString("ImportFromOnline", "Import from online database...");
+            
+            // Tray icon context menu
+            cmnuShow.Text = Ketarin.Localization.LocalizationManager.GetString("Show", "Show");
+            cmnuExit.Text = Ketarin.Localization.LocalizationManager.GetString("Exit", "Exit");
+            
+            // Column headers
+            colName.Text = Ketarin.Localization.LocalizationManager.GetString("Name", "Name");
+            colLastUpdate.Text = Ketarin.Localization.LocalizationManager.GetString("LastUpdate", "Last update");
+            colProgress.Text = Ketarin.Localization.LocalizationManager.GetString("Progress", "Progress");
+            colTarget.Text = Ketarin.Localization.LocalizationManager.GetString("Target", "Target");
+            colCategory.Text = Ketarin.Localization.LocalizationManager.GetString("Category", "Category");
+            colStatus.Text = Ketarin.Localization.LocalizationManager.GetString("Status", "Status");
+            
+            // Tray icon
+            ntiTrayIcon.Text = Ketarin.Localization.LocalizationManager.GetString("TrayIconIdle", "Ketarin (Idle)");
+            
+            // Status bar (default values, will be updated dynamically)
+            tbSelectedApplications.Text = Ketarin.Localization.LocalizationManager.GetString("SelectedApplications", "Selected applications: 0");
+            tbTotalApplications.Text = Ketarin.Localization.LocalizationManager.GetString("NumberOfApplications", "Number of applications: 0");
+            tbNumByStatus.Text = Ketarin.Localization.LocalizationManager.GetString("StatusSummary", "By status: 0 Idle, 0 Finished, 0 Failed");
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Net;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using CDBurnerXP;
+using Ketarin.Localization; // Adicionar esta linha
 
 namespace Ketarin.Forms
 {
@@ -143,6 +144,7 @@ namespace Ketarin.Forms
             base.OnLoad(e);
 
             this.LoadSettings();
+            this.ApplyLocalization(); // Adicionar esta linha
 
             this.cboCommandEvent.SelectedIndex = 0;
         }
@@ -228,14 +230,14 @@ namespace Ketarin.Forms
                 {
                     try
                     {
-                        SettingsExporter.ExportToFile(dialog.FileName);                     
+                        SettingsExporter.ExportToFile(dialog.FileName);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(this, "Failed to export the settings: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }            
+            }
         }
 
         private void bImport_Click(object sender, EventArgs e)
@@ -255,7 +257,7 @@ namespace Ketarin.Forms
                         MessageBox.Show(this, "Failed to import the settings: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }    
+            }
         }
 
         #region Global variables
@@ -280,7 +282,7 @@ namespace Ketarin.Forms
                 // Skip variables without name
                 if (string.IsNullOrEmpty(varName)) continue;
 
-                UrlVariable newVariable = new UrlVariable(varName, null) {CachedContent = row[1] as string};
+                UrlVariable newVariable = new UrlVariable(varName, null) { CachedContent = row[1] as string };
                 UrlVariable.GlobalVariables[varName] = newVariable;
             }
 
@@ -317,7 +319,7 @@ namespace Ketarin.Forms
                     Settings.SetValue("UpdateFailedCommand", this.commandControl.Text);
                     Settings.SetValue("UpdateFailedCommandType", this.commandControl.CommandType.ToString());
                     break;
-            }            
+            }
         }
 
         private void cboCommandEvent_SelectedIndexChanged(object sender, EventArgs e)
@@ -378,7 +380,7 @@ namespace Ketarin.Forms
         {
             if (this.olvCustomColumns.SelectedObject != null)
             {
-                this.cachedCustomColumns.Remove(((KeyValuePair<string, string>) this.olvCustomColumns.SelectedObject).Key);
+                this.cachedCustomColumns.Remove(((KeyValuePair<string, string>)this.olvCustomColumns.SelectedObject).Key);
                 this.olvCustomColumns.SetObjects(this.cachedCustomColumns);
                 this.CustomColumnsChanged = true;
             }
@@ -396,7 +398,7 @@ namespace Ketarin.Forms
 
             int index = this.olvCustomColumns.SelectedIndex;
 
-            KeyValuePair<string, string> selectedItem = (KeyValuePair<string, string>) this.olvCustomColumns.SelectedObject;
+            KeyValuePair<string, string> selectedItem = (KeyValuePair<string, string>)this.olvCustomColumns.SelectedObject;
             using (AddCustomColumnDialog dialog = new AddCustomColumnDialog())
             {
                 dialog.ColumnName = selectedItem.Key;
@@ -457,5 +459,70 @@ namespace Ketarin.Forms
         }
 
         #endregion
-    }
+    
+
+
+    private void ApplyLocalization()
+        {
+            // Título da janela
+            this.Text = LocalizationManager.GetString("SettingsTitle", "Settings");
+
+            // Botões principais
+            bOK.Text = LocalizationManager.GetString("OK", "OK");
+            bCancel.Text = LocalizationManager.GetString("Cancel", "Cancel");
+
+            // Abas
+            tpGeneral.Text = LocalizationManager.GetString("General", "General");
+            tpConnection.Text = LocalizationManager.GetString("Connection", "Connection");
+            tabPage1.Text = LocalizationManager.GetString("GlobalVariables", "Global variables");
+            tpCommands.Text = LocalizationManager.GetString("Commands", "Commands");
+            tpHotkeys.Text = LocalizationManager.GetString("Hotkeys", "Hotkeys");
+
+            // Aba General
+            chkUpdateAtStartup.Text = LocalizationManager.GetString("UpdateAtStartup", "Upd&ate automatically at startup");
+            chkAvoidBeta.Text = LocalizationManager.GetString("AvoidBeta", "Avoid &beta versions on FileHippo");
+            chkAvoidNonBinary.Text = LocalizationManager.GetString("AvoidNonBinary", "A&void downloading non-binary files (potentially error pages)");
+            chkUpdateOnlineDatabase.Text = LocalizationManager.GetString("UpdateOnlineDatabase", "&Check for updates in the online database");
+            chkMinToTray.Text = LocalizationManager.GetString("MinimizeToTray", "&Minimize to tray");
+            chkBackups.Text = LocalizationManager.GetString("AutoBackups", "A&utomatically create database backups");
+            chkOpenWebsite.Text = LocalizationManager.GetString("OpenWebsiteOnDoubleClick", "Ope&n website when double-clicking an application (if specified)");
+
+            // Custom columns
+            separator1.Text = LocalizationManager.GetString("CustomColumns", "Custom columns");
+            bAddCustomColumn.Text = LocalizationManager.GetString("Add", "A&dd...");
+            bEdit.Text = LocalizationManager.GetString("Edit", "&Edit");
+            bRemove.Text = LocalizationManager.GetString("Remove", "&Remove");
+            colName.Text = LocalizationManager.GetString("Name", "Name");
+            colValue.Text = LocalizationManager.GetString("Value", "Value");
+
+            // Aba Connection
+            lblConnectionTimeout.Text = LocalizationManager.GetString("ConnectionTimeout", "&Connection timeout:");
+            lblSeconds.Text = LocalizationManager.GetString("Seconds", "seconds");
+            lblNumThreads.Text = LocalizationManager.GetString("ParallelDownloads", "&Number of parallel downloads:");
+            lblNumRetries.Text = LocalizationManager.GetString("RetriesPerDownload", "Number of retrie&s per download:");
+            lblSegments.Text = LocalizationManager.GetString("SegmentsPerDownload", "Number &of segments per download:");
+            lblUserAgent.Text = LocalizationManager.GetString("DefaultUserAgent", "&Default user agent:");
+
+            // Proxy settings
+            sepProxy.Text = LocalizationManager.GetString("ProxySettings", "HTTP proxy settings");
+            lblServer.Text = LocalizationManager.GetString("Server", "&Server:");
+            lblProxyUser.Text = LocalizationManager.GetString("UserName", "Us&er name:");
+            lblProxyPassword.Text = LocalizationManager.GetString("Password", "&Password:");
+
+            // Aba Global Variables
+            lblGlobalVariables.Text = LocalizationManager.GetString("GlobalVariablesDescription", "Global variables can be used in all applications by using the syntax {variablename}. If you want to use a variable in a regular expression, use {{variablename}} instead.");
+
+            // Aba Commands
+            lblCommandEvent.Text = LocalizationManager.GetString("CommandEvent", "Command event:");
+
+            // Aba Hotkeys
+            lblActions.Text = LocalizationManager.GetString("Actions", "Actions:");
+            lblHotkey.Text = LocalizationManager.GetString("Hotkey", "Hotkey:");
+            bDoubleClick.Text = LocalizationManager.GetString("DoubleClick", "Double-click to assign");
+
+            // Botões de importar/exportar
+            bImport.Text = LocalizationManager.GetString("Import", "&Import...");
+            bExport.Text = LocalizationManager.GetString("Export", "&Export...");
+        }
+    } 
 }
