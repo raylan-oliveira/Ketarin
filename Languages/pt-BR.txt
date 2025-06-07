@@ -120,7 +120,7 @@ PressKeys="Pressione as teclas"
 Actions="Ações"
 
 # Diálogo de nova aplicação
-NewApplication="Nova Aplicação"
+NewApplication="Aplicação"
 EditApplication="Editar {0}"
 ApplicationNameLabel="Nome da aplicação"
 BetaVersions="Versões beta"
@@ -297,7 +297,6 @@ InstallationComplete="Instalação concluída"
 
 # MainForm localization
 FileMenu="Arquivo"
-NewApplication="Nova aplicação..."
 Import="Importar..."
 ExportSelected="Exportar selecionadas..."
 ExportAll="Exportar todas..."
@@ -372,7 +371,6 @@ StatusBarFormat="Por status: {0} Inativas, {1} Atualizações, {2} Finalizadas, 
 # MainForm localization
 MainFormTitle="Ketarin"
 FileMenu="&Arquivo"
-NewApplication="&Nova aplicação..."
 Import="&Importar..."
 ExportSelected="E&xportar selecionados..."
 ExportAll="Exportar &todos..."
@@ -425,7 +423,6 @@ TrayIconIdle="Ketarin (Inativo)"
 StatusSummary="Por status: {0} Inativo, {1} Concluído, {2} Falhou"
 
 # ApplicationJobDialog
-NewApplication=Nova Aplicação
 ApplicationName=Nome da aplicação:
 BetaVersions=Versões beta:
 SpoofReferer=&Falsificar referenciador HTTP:

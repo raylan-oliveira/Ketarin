@@ -116,7 +116,6 @@ Remove="Remove"
 
 # MainForm localization
 FileMenu="&File"
-NewApplication="&New application..."
 Import="&Import..."
 ExportSelected="E&xport selected..."
 ExportAll="Export &all..."
@@ -191,7 +190,6 @@ StatusBarFormat="By status: {0} Idle, {1} Updates, {2} Finished, {3} Failed ({4}
 # MainForm localization
 MainFormTitle="Ketarin"
 FileMenu="&File"
-NewApplication="&New application..."
 Import="&Import..."
 ExportSelected="E&xport selected..."
 ExportAll="Export &all..."
@@ -244,7 +242,7 @@ TrayIconIdle="Ketarin (Idle)"
 StatusSummary="By status: {0} Idle, {1} Finished, {2} Failed"
 
 # ApplicationJobDialog
-NewApplication=New Application
+NewApplication=Application
 ApplicationName=Application name:
 BetaVersions=Beta versions:
 SpoofReferer=Sp&oof HTTP referer:

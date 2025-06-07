@@ -213,15 +213,7 @@ namespace Ketarin.Forms
                         return;
                     }
                 }
-            }
-
-            // Verificar novamente se o arquivo existe após o update
-            if (!job.FileExists)
-            {
-                string noFileMessage = LocalizationManager.GetString("NoFileAvailable", "No file available for installation");
-                LogInfo(job.Name + ": " + noFileMessage, LogItemType.Error);
-                return;
-            }
+            }            
 
             string installingMessage = LocalizationManager.GetString("InstallingApplicationProgress", "Installing application {0} of {1}: {2}");
             UpdateStatus(string.Format(installingMessage, count, this.Applications.Length, job.Name));

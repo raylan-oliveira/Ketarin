@@ -32,6 +32,14 @@ namespace Ketarin.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.nRetryDelay = new System.Windows.Forms.NumericUpDown();
+            this.nRetryDelay.Location = new System.Drawing.Point(120, 200);
+            this.nRetryDelay.Maximum = new decimal(new int[] { 60000, 0, 0, 0 });
+            this.nRetryDelay.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.nRetryDelay.Value = new decimal(new int[] { 5000, 0, 0, 0 });
+            this.lblRetryDelay = new System.Windows.Forms.Label();
+            this.lblRetryDelay.Text = "Delay entre tentativas (ms):";
+            
             this.bCancel = new System.Windows.Forms.Button();
             this.bOK = new System.Windows.Forms.Button();
             this.chkUpdateAtStartup = new System.Windows.Forms.CheckBox();
@@ -810,6 +818,8 @@ namespace Ketarin.Forms
         private CheckBox chkAvoidBeta;
         private Label lblConnectionTimeout;
         private NumericUpDown nConnectionTimeout;
+        private System.Windows.Forms.NumericUpDown nRetryDelay;
+        private System.Windows.Forms.Label lblRetryDelay;
         private Label lblSeconds;
         private Separator sepProxy;
         private Label lblServer;

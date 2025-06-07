@@ -367,53 +367,29 @@ namespace Ketarin
             try
             {
                 ApplicationJob previousJob = null;
+                Queue<ApplicationJob> jobQueue = new Queue<ApplicationJob>(m_Jobs.Where(j => j.Enabled || m_Jobs.Length == 1));
 
-                foreach (ApplicationJob job in m_Jobs)
+                while (jobQueue.Count > 0 || m_Threads.Count > 0)
                 {
-                    // Skip if disabled
-                    if (!job.Enabled && m_Jobs.Length > 1) continue;
+                    // Limpar threads mortas
+                    CleanupDeadThreads();
 
-                    // Wait until we can start a new thread:
-                    // - Thread limit is not reached
-                    // - The next application is not to be downloaded exclusively
-                    // - The application previously started is not to be downloaded exclusively
-                    // - Setup is taking place
-                    while (m_Threads.Count >= m_ThreadLimit || (m_Threads.Count > 0 && (m_InstallUpdated || job.ExclusiveDownload || (previousJob != null && previousJob.ExclusiveDownload))))
+                    // Iniciar novos downloads se possível
+                    while (jobQueue.Count > 0 && CanStartNewThread(previousJob, jobQueue.Peek()))
                     {
-                        Thread.Sleep(200);
+                        ApplicationJob job = jobQueue.Dequeue();
+                        
+                        if (m_CancelUpdates) break;
 
-                        foreach (Thread activeThread in m_Threads)
-                        {
-                            if (!activeThread.IsAlive)
-                            {
-                                m_Threads.Remove(activeThread);
-                                break;
-                            }
-                        }
+                        Thread newThread = new Thread(this.StartNewThread);
+                        previousJob = job;
+                        newThread.Start(job);
+                        m_Threads.Add(newThread);
+                        
+                        LogDialog.Log(job, $"Download iniciado. Threads ativas: {m_Threads.Count}");
                     }
 
-                    // Stop if cancelled
-                    if (m_CancelUpdates) break;
-
-                    Thread newThread = new Thread(this.StartNewThread);
-                    previousJob = job;
-                    newThread.Start(job);
-                    m_Threads.Add(newThread);
-                }
-
-                // Now, wait until all threads have finished
-                while (m_Threads.Count > 0)
-                {
                     Thread.Sleep(200);
-
-                    foreach (Thread activeThread in m_Threads)
-                    {
-                        if (!activeThread.IsAlive)
-                        {
-                            m_Threads.Remove(activeThread);
-                            break;
-                        }
-                    }
                 }
 
                 try
@@ -438,6 +414,24 @@ namespace Ketarin
             }
         }
 
+        private void CleanupDeadThreads()
+        {
+            for (int i = m_Threads.Count - 1; i >= 0; i--)
+            {
+                if (!m_Threads[i].IsAlive)
+                {
+                    m_Threads.RemoveAt(i);
+                }
+            }
+        }
+
+        private bool CanStartNewThread(ApplicationJob previousJob, ApplicationJob nextJob)
+        {
+            return m_Threads.Count < m_ThreadLimit && 
+                   !(m_Threads.Count > 0 && (m_InstallUpdated || nextJob.ExclusiveDownload || 
+                   (previousJob != null && previousJob.ExclusiveDownload)));
+        }
+
         /// <summary>
         /// Performs the update process of a single application.
         /// Catches most exceptions and stores them for later use.
@@ -452,6 +446,7 @@ namespace Ketarin
             string requestedUrl = string.Empty;
             int numTries = 0;
             int maxTries = Convert.ToInt32(Settings.GetValue("RetryCount", 1));
+            int retryDelay = Convert.ToInt32(Settings.GetValue("RetryDelay", 5000));
 
             try
             {
@@ -460,6 +455,8 @@ namespace Ketarin
                     try
                     {
                         numTries++;
+                        LogDialog.Log(job, $"Iniciando download - Tentativa {numTries}/{maxTries} - Threads ativas: {m_Threads.Count}");
+                        
                         m_Status[job] = DoDownload(job, out requestedUrl);
 
                         // If there is a custom column variable, and it has not been been downloaded yet,
@@ -509,14 +506,16 @@ namespace Ketarin
                             break;
                         }
 
-                        // Only throw an exception if we have run out of tries
-                        if (numTries == maxTries)
+                        LogDialog.Log(job, $"Erro na tentativa {numTries}: {ex.Message}");
+                        
+                        if (numTries < maxTries)
                         {
-                            throw;
+                            LogDialog.Log(job, $"Aguardando {retryDelay}ms antes da próxima tentativa...");
+                            Thread.Sleep(retryDelay);
                         }
                         else
                         {
-                            LogDialog.Log(job, ex);
+                            throw;
                         }
                     }
                 }

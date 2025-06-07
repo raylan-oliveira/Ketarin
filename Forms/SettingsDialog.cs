@@ -164,6 +164,7 @@ namespace Ketarin.Forms
             this.nConnectionTimeout.Value = Convert.ToDecimal(Settings.GetValue("ConnectionTimeout", 10.0));
             this.nNumThreads.Value = Convert.ToDecimal(Settings.GetValue("ThreadCount", 2));
             this.nNumRetries.Value = Convert.ToDecimal(Settings.GetValue("RetryCount", 1));
+            this.nRetryDelay.Value = Convert.ToDecimal(Settings.GetValue("RetryDelay", 5000));
             this.nNumSegments.Value = Convert.ToDecimal(Settings.GetValue("SegmentCount", 1));
             this.chkMinToTray.Checked = (bool)Settings.GetValue("MinimizeToTray", false);
             this.chkOpenWebsite.Checked = (bool)Settings.GetValue("OpenWebsiteOnDoubleClick", false);
@@ -196,6 +197,7 @@ namespace Ketarin.Forms
             Settings.SetValue("AvoidFileHippoBeta", this.chkAvoidBeta.Checked);
             Settings.SetValue("ConnectionTimeout", this.nConnectionTimeout.Value);
             Settings.SetValue("ThreadCount", Convert.ToInt32(this.nNumThreads.Value));
+            Settings.SetValue("RetryDelay", Convert.ToInt32(this.nRetryDelay.Value));
             Settings.SetValue("RetryCount", Convert.ToInt32(this.nNumRetries.Value));
             Settings.SetValue("SegmentCount", Convert.ToInt32(this.nNumSegments.Value));
             Settings.SetValue("UpdateOnlineDatabase", this.chkUpdateOnlineDatabase.Checked);
